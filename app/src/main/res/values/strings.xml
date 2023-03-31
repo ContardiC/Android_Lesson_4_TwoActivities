@@ -6,4 +6,6 @@
     <string name="editText_Main">Enter Your Message Here</string>
     <string name="button_second">Reply</string>
     <string name="editText_second">Enter Your Reply Here</string>
+    <string name="hint_message_received">Ecco il messaggio</string>
+    <string name="text_header_reply">Reply Received</string>
 </resources>
