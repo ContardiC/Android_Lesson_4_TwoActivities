@@ -29,6 +29,31 @@ public class MainActivity extends AppCompatActivity {
         mReplyTextView = (TextView) findViewById(R.id.text_message_reply);
     }
 
+    public void onStart(){
+        super.onStart();
+        Log.d(LOG_TAG,"onStart");
+    }
+    public void onPause(){
+        super.onPause();
+        Log.d(LOG_TAG, "onPause");
+    }
+    public void onResume(){
+        super.onResume();
+        Log.d(LOG_TAG,"onResume");
+    }
+    public void onRestart(){
+        super.onRestart();
+        Log.d(LOG_TAG,"onRestart");
+    }
+    public void onStop(){
+        super.onStop();
+        Log.d(LOG_TAG, "onStop");
+    }
+    public void onDestroy(){
+        super.onDestroy();
+        Log.d(LOG_TAG,"onDestroy");
+    }
+
     public void launchSecondActivity(View view) {
         Log.d(LOG_TAG,"Button main clicked");
         Intent intent = new Intent(this, SecondActivity.class);
