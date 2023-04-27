@@ -27,6 +27,14 @@ public class MainActivity extends AppCompatActivity {
         mMessageEditText = (EditText) findViewById(R.id.editText_Main);
         mReplyHeadTextView = (TextView) findViewById(R.id.text_header_reply);
         mReplyTextView = (TextView) findViewById(R.id.text_message_reply);
+        if(savedInstanceState != null){
+            boolean isVisible = savedInstanceState.getBoolean("reply_visible");
+            if(isVisible){
+                mReplyHeadTextView.setVisibility(View.VISIBLE);
+                mReplyTextView.setText(savedInstanceState.getString("reply_text"));
+                mReplyTextView.setVisibility(View.VISIBLE);
+            }
+        }
     }
 
     public void onStart(){
@@ -71,6 +79,15 @@ public class MainActivity extends AppCompatActivity {
                 mReplyTextView.setVisibility(View.VISIBLE);
             }
         }
-
+    }
+    public void onSaveInstanceState(Bundle outstate){
+        super.onSaveInstanceState(outstate);
+        // se il messaggio è visibile è perchè lo abbiamo ricevuto quindi salviamo
+        // l'istanza
+        if(mReplyTextView.getVisibility()== View.VISIBLE){
+            // funziona sempre con chiave-valore
+            outstate.putBoolean("reply_visible",true);
+            outstate.putString("reply_text", mReplyTextView.getText().toString());
+        }
     }
 }
