@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
         String message = mMessageEditText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE,message);
         startActivityForResult(intent, TEXT_REQUEST);
-
-
         Log.d(LOG_TAG,"Ecco il messaggio => " +message);
     }
     public void onActivityResult(int requestCode, int resultCode, Intent data){
